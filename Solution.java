@@ -3,7 +3,8 @@ class Solution {
         int original = x;
         int ld;
         int temp = 0;
-        for (int i = 0; x > 0; i++) {
+        for (@SuppressWarnings("unused")
+        int i = 0; x > 0; i++) {
             ld = x % 10;
             temp = (temp * 10) + ld;
             x /= 10;

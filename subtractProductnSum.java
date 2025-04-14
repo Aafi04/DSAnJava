@@ -4,7 +4,8 @@ public class subtractProductnSum {
         int product = 1;
         int sum = 0;
         int ld = 0;
-        for (int i = 0; num > 0; i++) {
+        for (@SuppressWarnings("unused")
+        int i = 0; num > 0; i++) {
             ld = num % 10;
             num /= 10;
             product *= ld;
