@@ -13,7 +13,8 @@ public class armstrongNum {
 
     static int isPower(int n) {
         int count = 0;
-        for (int i = 0; n > 0; i++) {
+        for (@SuppressWarnings("unused")
+        int i = 0; n > 0; i++) {
             n /= 10;
             count += 1;
         }
@@ -27,7 +28,8 @@ public class armstrongNum {
         int arms = 0;
         int b = isPower(n);
 
-        for (int i = 0; n > 0; i++) {
+        for (@SuppressWarnings("unused")
+        int i = 0; n > 0; i++) {
             ld = (int) Math.pow((n%10), b);
             arms += ld;
             n /= 10;
