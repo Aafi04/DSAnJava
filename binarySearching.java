@@ -1,9 +1,13 @@
+import java.util.*;
+
 public class binarySearching{
     public static void main(String[] args) {
-        int[] arr = {384, 357, 306, 257, 201, 198, 154, 20};
+        int[] arr = {384, 357, 306, 257, 201};
         int target = 357;
-        System.out.println(binarySearch(arr, target));
 
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Target: "+ target);
+        System.out.println(binarySearch(arr, target));
     }
 
     static int binarySearch(int[] arr, int target) {
