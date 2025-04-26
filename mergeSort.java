@@ -3,7 +3,6 @@ import java.util.*;
 public class mergeSort {
 
     void merge(int a[], int l, int m, int r) {
-
         int n1 = m - l + 1;
         int n2 = r - m;
 
@@ -16,37 +15,29 @@ public class mergeSort {
         for (int j = 0; j < n2; ++j)
             R[j] = a[m + 1 + j];
 
-        int i = 0, j = 0;
+        mergeRecursive(a, L, R, l, 0, 0);
+    }
 
-        int k = l;
-        while (i < n1 && j < n2) {
+    void mergeRecursive(int a[], int L[], int R[], int k, int i, int j) {
+        if (i < L.length && j < R.length) {
             if (L[i] <= R[j]) {
                 a[k] = L[i];
-                i++;
+                mergeRecursive(a, L, R, k + 1, i + 1, j);
             } else {
                 a[k] = R[j];
-                j++;
+                mergeRecursive(a, L, R, k + 1, i, j + 1);
             }
-            k++;
-        }
-
-        while (i < n1) {
+        } else if (i < L.length) {
             a[k] = L[i];
-            i++;
-            k++;
-        }
-
-        while (j < n2) {
+            mergeRecursive(a, L, R, k + 1, i + 1, j);
+        } else if (j < R.length) {
             a[k] = R[j];
-            j++;
-            k++;
+            mergeRecursive(a, L, R, k + 1, i, j + 1);
         }
     }
 
-
     void sort(int a[], int l, int r) {
         if (l < r) {
-
             int m = (l + r) / 2;
 
             sort(a, l, m);
